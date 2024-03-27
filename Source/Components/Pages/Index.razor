@@ -1,0 +1,33 @@
+@page "/"
+<PageTitle>Index</PageTitle>
+<RadzenRow Gap="5" RowGap="5">
+    <RadzenColumn Size="12">
+        <RadzenText Text="Welcome to the SignalF Measurement Viewer" TextStyle="Radzen.Blazor.TextStyle.H2" TagName="Radzen.Blazor.TagName.H2"></RadzenText>
+        <RadzenText Text="Show realtime data with SignalF." TextStyle="Radzen.Blazor.TextStyle.H4" TagName="Radzen.Blazor.TagName.H4" class="mt-5"></RadzenText>
+        <RadzenText Text="This is an example application for displaying data in real time using Blazor and SignalR." TextStyle="Radzen.Blazor.TextStyle.Body1" TagName="Radzen.Blazor.TagName.Auto" class="mt-4" Style="font-size: 20px; line-height: 24px"></RadzenText>
+    </RadzenColumn>
+</RadzenRow>
+<RadzenRow Gap="5" RowGap="5">
+    <RadzenColumn Size="12">
+        <RadzenRow>
+            <RadzenPanel Style="width: 100%">
+                <RadzenRow Gap="15" RowGap="15">
+                    @if (Buildings != null)
+                    {
+                        foreach (var building in Buildings)
+                        {
+                            <RadzenColumn SizeLG="4">
+                                <RadzenLink Path="@($"/buildingstatus/{building.Id}")">
+                                    <RadzenCard>
+                                        <RadzenIcon Icon="house_siding" Style="margin-top: 20px; width: 48px; height: 48px; font-size: 48px; color: var(--rz-text-title-color);" IconColor="#990000"></RadzenIcon>
+                                        <RadzenText Text="@building.Name" TextStyle="Radzen.Blazor.TextStyle.H6" TagName="Radzen.Blazor.TagName.H6"></RadzenText>
+                                    </RadzenCard>
+                                </RadzenLink>
+                            </RadzenColumn>
+                        }
+                    }
+                </RadzenRow>
+            </RadzenPanel>
+        </RadzenRow>
+    </RadzenColumn>
+</RadzenRow>

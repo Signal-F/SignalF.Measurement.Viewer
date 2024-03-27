@@ -1,0 +1,12 @@
+/Source/_ReSharper.Caches
+/Source/packages
+bin
+obj
+.vs
+.vscode
+*.user
+/packages
+
+/Build/Nuget/*.nupkg
+/Test/TestController/packages
+/LocalPackages

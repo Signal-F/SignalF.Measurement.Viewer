@@ -1,0 +1,73 @@
+@page "/buildingstatus/{buildingId}"
+
+<PageTitle>@Building?.Name</PageTitle>
+
+
+<RadzenText Text="@Building?.Name" TagName="TagName.Auto" TextStyle="TextStyle.Subtitle1"/>
+
+
+<RadzenRow Gap="0" RowGap="15">
+    <RadzenColumn Size="12">
+        <RadzenRow>
+            <RadzenPanel Style="width: 100%">
+                <RadzenRow Gap=10 RowGap="10">
+                    @if (Building != null)
+                    {
+                        foreach (var room in Building.Rooms)
+                        {
+                            <RadzenColumn SizeLG="4">
+                                @*                                     <RadzenLink Path="@($"/buildingstatus/{room.Id}")">
+ *@
+                                <RadzenCard>
+                                    <RadzenRow>
+                                        <RadzenColumn SizeLG="3" Style="display: table; text-align: center">
+                                            <RadzenIcon Icon="crop_3_2" Style="font-size: 48px; height: 48px; width: 48px;"></RadzenIcon>
+                                            <RadzenText Text="@room.Number" TextStyle="TextStyle.Subtitle1" TagName="TagName.H3"></RadzenText>
+                                        </RadzenColumn>
+                                        <RadzenColumn SizeLG="9">
+                                            <RadzenRow RowGap="5" >
+                                                <RadzenColumn Size="1">
+                                                    <RadzenIcon Icon="fiber_manual_record" IconColor="#00AA00" IconStyle="IconStyle.Primary" Style="color: #ffd800; float: none; height: 16px; width: 16px; display: grid"></RadzenIcon>
+                                                </RadzenColumn>
+                                                <RadzenColumn Size="7">
+                                                    <RadzenText Text="Temperature" TextStyle="TextStyle.Body2"></RadzenText>
+                                                </RadzenColumn >
+                                                <RadzenColumn Size="4">
+                                                    <RadzenText Text="20.3 °C" TextStyle="TextStyle.Body2"></RadzenText>
+                                                </RadzenColumn>
+                                            </RadzenRow>
+                                            <RadzenRow>
+                                                <RadzenColumn Size="1">
+                                                    <RadzenIcon Icon="fiber_manual_record" IconColor="#00AA00" IconStyle="IconStyle.Primary" Style="display: grid; float: none; height: 16px; width: 16px"></RadzenIcon>
+                                                </RadzenColumn>
+                                                <RadzenColumn Size="7">
+                                                    <RadzenText Text="Humidity" TextStyle="TextStyle.Body2"></RadzenText>
+                                                </RadzenColumn>
+                                                <RadzenColumn Size="4">
+                                                    <RadzenText Text="42,7%" TextStyle="TextStyle.Body2"></RadzenText>
+                                                </RadzenColumn>
+                                            </RadzenRow>
+                                            <RadzenRow>
+                                                <RadzenColumn Size="1">
+                                                    <RadzenIcon Icon="fiber_manual_record" IconColor="#00AA00" IconStyle="IconStyle.Primary" Style="display: grid; float: none; height: 16px; width: 16px"></RadzenIcon>
+                                                </RadzenColumn>
+                                                <RadzenColumn Size="7">
+                                                    <RadzenText Text="Differential pressure" TextStyle="TextStyle.Body2"></RadzenText>
+                                                </RadzenColumn>
+                                                <RadzenColumn Size="4">
+                                                    <RadzenText Text="45 Pa" TextStyle="TextStyle.Body2"></RadzenText>
+                                                </RadzenColumn>
+                                            </RadzenRow>
+                                        </RadzenColumn>
+                                    </RadzenRow>
+                                </RadzenCard>
+                                @*                                  </RadzenLink>
+    *@
+                            </RadzenColumn>
+                        }
+                    }
+                </RadzenRow>
+            </RadzenPanel>
+        </RadzenRow>
+    </RadzenColumn>
+</RadzenRow>
