@@ -92,6 +92,12 @@
     --rz-on-danger-dark: #ffffff;
     --rz-on-danger-darker: #ffffff;
     --rz-text-title-color: #00A4CD;
+    --rz-text-h2-color: #000000;
+    --rz-text-h1-color: #000000;
+    --rz-text-h1-font-size: clamp(3rem, 4.167vw, 3.75rem);
+    --rz-text-h2-font-size: clamp(2.25rem, 3.333vw, 3rem);
+    --rz-text-h3-color: #000000;
+    --rz-text-h4-color: #000000;
 }
 
 body {

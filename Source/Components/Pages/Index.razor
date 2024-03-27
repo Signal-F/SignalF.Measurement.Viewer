@@ -2,25 +2,64 @@
 <PageTitle>Index</PageTitle>
 <RadzenRow Gap="5" RowGap="5">
     <RadzenColumn Size="12">
-        <RadzenText Text="Welcome to the SignalF Measurement Viewer" TextStyle="Radzen.Blazor.TextStyle.H2" TagName="Radzen.Blazor.TagName.H2"></RadzenText>
-        <RadzenText Text="Show realtime data with SignalF." TextStyle="Radzen.Blazor.TextStyle.H4" TagName="Radzen.Blazor.TagName.H4" class="mt-5"></RadzenText>
-        <RadzenText Text="This is an example application for displaying data in real time using Blazor and SignalR." TextStyle="Radzen.Blazor.TextStyle.Body1" TagName="Radzen.Blazor.TagName.Auto" class="mt-4" Style="font-size: 20px; line-height: 24px"></RadzenText>
+        <RadzenText Text="Welcome to the SignalF Measurement Viewer" TextStyle="Radzen.Blazor.TextStyle.H2" TagName="Radzen.Blazor.TagName.H2" Style="text-align: center"></RadzenText>
+        <RadzenText Text="Show realtime data with SignalF." TextStyle="Radzen.Blazor.TextStyle.H4" TagName="Radzen.Blazor.TagName.H4" class="mt-5" Style="text-align: center"></RadzenText>
+        <RadzenText Text="This is an example application for displaying data in real time using Blazor and SignalR." TextStyle="Radzen.Blazor.TextStyle.Body1" TagName="Radzen.Blazor.TagName.Auto" Style="line-height: 16px; font-size: 16px; margin: 0, 220,0,0; margin-top: 50px"></RadzenText>
     </RadzenColumn>
 </RadzenRow>
 <RadzenRow Gap="5" RowGap="5">
     <RadzenColumn Size="12">
         <RadzenRow>
             <RadzenPanel Style="width: 100%">
-                <RadzenRow Gap="15" RowGap="15">
+                <RadzenRow Gap="10" RowGap="10">
                     @if (Buildings != null)
                     {
                         foreach (var building in Buildings)
                         {
-                            <RadzenColumn SizeLG="4">
+                            <RadzenColumn SizeSM="12" SizeMD="6" SizeLG="4" SizeXL="3">
                                 <RadzenLink Path="@($"/buildingstatus/{building.Id}")">
                                     <RadzenCard>
-                                        <RadzenIcon Icon="house_siding" Style="margin-top: 20px; width: 48px; height: 48px; font-size: 48px; color: var(--rz-text-title-color);" IconColor="#990000"></RadzenIcon>
-                                        <RadzenText Text="@building.Name" TextStyle="Radzen.Blazor.TextStyle.H6" TagName="Radzen.Blazor.TagName.H6"></RadzenText>
+                                        <RadzenRow>
+                                            <RadzenColumn SizeLG="4" Style="display: table; text-align: center">
+                                                <RadzenIcon Icon="house_siding" Style="font-size: 48px; height: 48px; width: 48px; color: #990000"></RadzenIcon>
+                                                <RadzenText Text="@building.Name" TextStyle="Radzen.Blazor.TextStyle.H6" TagName="Radzen.Blazor.TagName.H6"></RadzenText>
+                                            </RadzenColumn>
+                                            <RadzenColumn SizeLG="8">
+                                            <RadzenRow RowGap="5" >
+                                                <RadzenColumn Size="8">
+                                                    <RadzenText Text="Status" TextStyle="TextStyle.Body2"></RadzenText>
+                                                </RadzenColumn >
+                                                <RadzenColumn Size="4">
+                                                    <RadzenIcon Icon="fiber_manual_record" IconColor="#00AA00" IconStyle="IconStyle.Primary" Style="float: none; height: 16px; width: 16px; display: grid"></RadzenIcon>
+                                                </RadzenColumn>
+                                            </RadzenRow>
+                                            <RadzenRow>
+                                                <RadzenColumn Size="8">
+                                                    <RadzenText Text="Operating Mode" TextStyle="TextStyle.Body2"></RadzenText>
+                                                </RadzenColumn>
+                                                <RadzenColumn Size="4">
+                                                    <RadzenText Text="Day" TextStyle="TextStyle.Body2"></RadzenText>
+                                                </RadzenColumn>
+                                            </RadzenRow>
+                                            <RadzenRow>
+                                                <RadzenColumn Size="8">
+                                                    <RadzenText Text="Active Devices" TextStyle="TextStyle.Body2"></RadzenText>
+                                                </RadzenColumn>
+                                                <RadzenColumn Size="4">
+                                                    <RadzenText Text="17" TextStyle="TextStyle.Body2"></RadzenText>
+                                                </RadzenColumn>
+                                            </RadzenRow>
+                                            <RadzenRow>
+                                                <RadzenColumn Size="8">
+                                                    <RadzenText Text="Inactive Devices" TextStyle="TextStyle.Body2"></RadzenText>
+                                                </RadzenColumn>
+                                                <RadzenColumn Size="4">
+                                                    <RadzenText Text="6" TextStyle="TextStyle.Body2"></RadzenText>
+                                                </RadzenColumn>
+                                            </RadzenRow>
+                                        </RadzenColumn>
+                                        </RadzenRow>
+                                        
                                     </RadzenCard>
                                 </RadzenLink>
                             </RadzenColumn>

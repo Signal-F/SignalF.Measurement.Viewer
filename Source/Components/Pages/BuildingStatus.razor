@@ -15,19 +15,17 @@
                     {
                         foreach (var room in Building.Rooms)
                         {
-                            <RadzenColumn SizeLG="4">
-                                @*                                     <RadzenLink Path="@($"/buildingstatus/{room.Id}")">
- *@
+                            <RadzenColumn SizeSM="12" SizeMD="6" SizeLG="4">
                                 <RadzenCard>
                                     <RadzenRow>
                                         <RadzenColumn SizeLG="3" Style="display: table; text-align: center">
-                                            <RadzenIcon Icon="crop_3_2" Style="font-size: 48px; height: 48px; width: 48px;"></RadzenIcon>
+                                        <RadzenIcon Icon="crop_3_2" Style="font-size: 48px; height: 48px; width: 48px; color: #990000"></RadzenIcon>
                                             <RadzenText Text="@room.Number" TextStyle="TextStyle.Subtitle1" TagName="TagName.H3"></RadzenText>
                                         </RadzenColumn>
                                         <RadzenColumn SizeLG="9">
                                             <RadzenRow RowGap="5" >
                                                 <RadzenColumn Size="1">
-                                                    <RadzenIcon Icon="fiber_manual_record" IconColor="#00AA00" IconStyle="IconStyle.Primary" Style="color: #ffd800; float: none; height: 16px; width: 16px; display: grid"></RadzenIcon>
+                                                    <RadzenIcon Icon="fiber_manual_record" IconColor="#ffd800" IconStyle="IconStyle.Primary" Style="float: none; height: 16px; width: 16px; display: grid"></RadzenIcon>
                                                 </RadzenColumn>
                                                 <RadzenColumn Size="7">
                                                     <RadzenText Text="Temperature" TextStyle="TextStyle.Body2"></RadzenText>
@@ -61,8 +59,6 @@
                                         </RadzenColumn>
                                     </RadzenRow>
                                 </RadzenCard>
-                                @*                                  </RadzenLink>
-    *@
                             </RadzenColumn>
                         }
                     }
