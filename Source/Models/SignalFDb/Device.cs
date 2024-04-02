@@ -20,6 +20,9 @@ namespace SignalF.Measurement.Viewer.Models.SignalFDb
         [Required]
         public string Name { get; set; }
 
+        [Required]
+        public byte State { get; set; }
+
         public ICollection<Measurement> Measurements { get; set; }
 
     }

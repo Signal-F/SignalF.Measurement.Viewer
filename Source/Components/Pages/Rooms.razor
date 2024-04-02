@@ -17,6 +17,8 @@
         <RadzenDataGrid @ref="grid0" ColumnWidth="200px"   AllowFiltering="true" FilterMode="FilterMode.Advanced" AllowPaging="true" AllowSorting="true" ShowPagingSummary="true" PageSizeOptions=@(new int[]{5, 10, 20, 30})
             Data="@rooms" TItem="SignalF.Measurement.Viewer.Models.SignalFDb.Room" RowSelect="@EditRow">
             <Columns>
+                <RadzenDataGridColumn TItem="SignalF.Measurement.Viewer.Models.SignalFDb.Room" Property="Id" Title="Id">
+                </RadzenDataGridColumn>
                 <RadzenDataGridColumn TItem="SignalF.Measurement.Viewer.Models.SignalFDb.Room" Property="Building.Name" Title="Building">
                 </RadzenDataGridColumn>
                 <RadzenDataGridColumn TItem="SignalF.Measurement.Viewer.Models.SignalFDb.Room" Property="Number" Title="Number">
