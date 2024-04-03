@@ -19,11 +19,13 @@ builder.Services.AddDbContextPool<SignalFDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("SignalFDbConnection"));
 });
-builder.Services.AddScoped<SignalF.Measurement.Viewer.SignalFDbService>();
+builder.Services.AddScoped<SignalFDbService>();
 builder.Services.AddDbContext<SignalF.Measurement.Viewer.Data.SignalFDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("SignalFDbConnection"));
 });
+builder.Services.AddScoped<SignalF.Measurement.Viewer.SignalFDbService>();
+builder.Services.AddLocalization();
 var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -35,6 +37,7 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.MapControllers();
+app.UseRequestLocalization(options => options.AddSupportedCultures("en", "de").AddSupportedUICultures("en", "de").SetDefaultCulture("en"));
 app.UseStaticFiles();
 app.UseAntiforgery();
 app.MapRazorComponents<App>().AddInteractiveServerRenderMode();

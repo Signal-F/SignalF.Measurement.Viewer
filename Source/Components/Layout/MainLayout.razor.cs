@@ -32,11 +32,12 @@ namespace SignalF.Measurement.Viewer.Components.Layout
         [Inject]
         protected NotificationService NotificationService { get; set; }
 
-        private bool sidebarExpanded = true;
+        private bool sidebarExpanded = false;
 
         void SidebarToggleClick()
         {
             sidebarExpanded = !sidebarExpanded;
         }
+
     }
 }
