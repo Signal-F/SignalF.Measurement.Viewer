@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components;
 using Microsoft.EntityFrameworkCore;
 using SignalF.Measurement.Viewer.Data;
 using SignalF.Measurement.Viewer.Models.SignalFDb;
@@ -12,6 +12,9 @@ namespace SignalF.Measurement.Viewer.Components.Pages
         [Parameter] public string BuildingId { get; set; }
 
         private Building Building { get; set; }
+
+        [Inject]
+        protected SecurityService Security { get; set; }
 
         protected override async Task OnInitializedAsync()
         {

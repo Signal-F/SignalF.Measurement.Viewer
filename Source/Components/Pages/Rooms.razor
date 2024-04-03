@@ -1,5 +1,6 @@
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Rooms> L
-@page "/rooms"
+@page "/rooms"
+@attribute [Authorize]
 
 <PageTitle>Rooms</PageTitle>
 <RadzenStack>

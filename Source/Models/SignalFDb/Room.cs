@@ -13,13 +13,11 @@ namespace SignalF.Measurement.Viewer.Models.SignalFDb
         public Guid Id { get; set; }
 
         [Required]
-        [ConcurrencyCheck]
         public Guid BuildingId { get; set; }
 
         public Building Building { get; set; }
 
         [Required]
-        [ConcurrencyCheck]
         public string Number { get; set; }
 
         public ICollection<Device> Devices { get; set; }

@@ -1,5 +1,6 @@
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Measurements> L
-@page "/measurements"
+@page "/measurements"
+@attribute [Authorize]
 
 <PageTitle>Measurements</PageTitle>
 <RadzenStack>

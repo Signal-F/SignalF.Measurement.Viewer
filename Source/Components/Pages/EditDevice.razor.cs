@@ -46,6 +46,9 @@ namespace SignalF.Measurement.Viewer.Components.Pages
 
         protected IEnumerable<SignalF.Measurement.Viewer.Models.SignalFDb.Room> roomsForRoomId;
 
+        [Inject]
+        protected SecurityService Security { get; set; }
+
         protected async Task FormSubmit()
         {
             try

@@ -43,6 +43,9 @@ namespace SignalF.Measurement.Viewer.Components.Pages
 
         protected IEnumerable<SignalF.Measurement.Viewer.Models.SignalFDb.Building> buildingsForBuildingId;
 
+        [Inject]
+        protected SecurityService Security { get; set; }
+
         protected async Task FormSubmit()
         {
             try

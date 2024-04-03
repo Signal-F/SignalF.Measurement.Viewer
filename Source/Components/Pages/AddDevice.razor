@@ -1,5 +1,6 @@
 @inject Microsoft.Extensions.Localization.IStringLocalizer<AddDevice> L
-@page "/add-device"
+@page "/add-device"
+@attribute [Authorize]
 
 <PageTitle>Add Device</PageTitle>
     <RadzenColumn SizeMD=12>

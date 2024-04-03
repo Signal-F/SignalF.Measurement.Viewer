@@ -42,6 +42,9 @@ namespace SignalF.Measurement.Viewer.Components.Pages
         protected bool errorVisible;
         protected SignalF.Measurement.Viewer.Models.SignalFDb.Building building;
 
+        [Inject]
+        protected SecurityService Security { get; set; }
+
         protected async Task FormSubmit()
         {
             try

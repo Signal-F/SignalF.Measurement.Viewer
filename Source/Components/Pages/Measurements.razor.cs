@@ -36,6 +36,9 @@ namespace SignalF.Measurement.Viewer.Components.Pages
         protected IEnumerable<SignalF.Measurement.Viewer.Models.SignalFDb.Measurement> measurements;
 
         protected RadzenDataGrid<SignalF.Measurement.Viewer.Models.SignalFDb.Measurement> grid0;
+
+        [Inject]
+        protected SecurityService Security { get; set; }
         protected override async Task OnInitializedAsync()
         {
             measurements = await SignalFDbService.GetMeasurements(new Query { Expand = "Device" });

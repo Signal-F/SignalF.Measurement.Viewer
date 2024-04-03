@@ -25,6 +25,9 @@ public partial class Index
 
     protected IEnumerable<Building> Buildings { get; set; }
 
+    [Inject]
+    protected SecurityService Security { get; set; }
+
 
     protected override async Task OnInitializedAsync()
     {

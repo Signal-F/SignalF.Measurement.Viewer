@@ -36,6 +36,9 @@ namespace SignalF.Measurement.Viewer.Components.Pages
         protected IEnumerable<SignalF.Measurement.Viewer.Models.SignalFDb.Room> rooms;
 
         protected RadzenDataGrid<SignalF.Measurement.Viewer.Models.SignalFDb.Room> grid0;
+
+        [Inject]
+        protected SecurityService Security { get; set; }
         protected override async Task OnInitializedAsync()
         {
             rooms = await SignalFDbService.GetRooms(new Query { Expand = "Building" });

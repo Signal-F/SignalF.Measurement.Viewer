@@ -34,9 +34,20 @@ namespace SignalF.Measurement.Viewer.Components.Layout
 
         private bool sidebarExpanded = false;
 
+        [Inject]
+        protected SecurityService Security { get; set; }
+
         void SidebarToggleClick()
         {
             sidebarExpanded = !sidebarExpanded;
+        }
+
+        protected void ProfileMenuClick(RadzenProfileMenuItem args)
+        {
+            if (args.Value == "Logout")
+            {
+                Security.Logout();
+            }
         }
 
     }
