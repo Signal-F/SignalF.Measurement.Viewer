@@ -1,8 +1,7 @@
-@inject Microsoft.Extensions.Localization.IStringLocalizer<AddRoom> L
-@page "/add-room"
-@attribute [Authorize]
+@page "/add-room"
 
 <PageTitle>Add Room</PageTitle>
+@attribute [Authorize]
     <RadzenColumn SizeMD=12>
         <RadzenAlert Shade="Shade.Lighter" Variant="Variant.Flat" Size="AlertSize.Small" AlertStyle="AlertStyle.Danger" Visible="@errorVisible">Cannot save Room</RadzenAlert>
         <RadzenTemplateForm TItem="SignalF.Measurement.Viewer.Models.SignalFDb.Room" Data="@room" Visible="@(room != null)" Submit="@FormSubmit">

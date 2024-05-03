@@ -1,7 +1,4 @@
-@inject Microsoft.Extensions.Localization.IStringLocalizer<Buildings> L
 @page "/buildings"
-
-@attribute [Authorize(Roles="Admin")]
 
 <PageTitle>Buildings</PageTitle>
 <RadzenStack>
@@ -20,9 +17,9 @@
         <RadzenDataGrid @ref="grid0" ColumnWidth="200px"   AllowFiltering="true" FilterMode="FilterMode.Advanced" AllowPaging="true" AllowSorting="true" ShowPagingSummary="true" PageSizeOptions=@(new int[]{5, 10, 20, 30})
             Data="@buildings" TItem="SignalF.Measurement.Viewer.Models.SignalFDb.Building" RowSelect="@EditRow">
             <Columns>
-                <RadzenDataGridColumn TItem="SignalF.Measurement.Viewer.Models.SignalFDb.Building" Property="Id" Title="Id">
-                </RadzenDataGridColumn>
                 <RadzenDataGridColumn TItem="SignalF.Measurement.Viewer.Models.SignalFDb.Building" Property="Name" Title="Name">
+                </RadzenDataGridColumn>
+                <RadzenDataGridColumn TItem="SignalF.Measurement.Viewer.Models.SignalFDb.Building" Property="OperatingMode" Title="Operating Mode">
                 </RadzenDataGridColumn>
                 <RadzenDataGridColumn TItem="SignalF.Measurement.Viewer.Models.SignalFDb.Building" Filterable="false" Sortable="false" Width="70px" TextAlign="TextAlign.Center">
                     <Template Context="building">

@@ -9,7 +9,7 @@
     <RadzenColumn Size="12">
         <RadzenText Text="Welcome to the SignalF Measurement Viewer" TextStyle="Radzen.Blazor.TextStyle.H2" TagName="Radzen.Blazor.TagName.H2" Style="text-align: center"></RadzenText>
         <RadzenText Text="Show realtime data with SignalF." TextStyle="Radzen.Blazor.TextStyle.H4" TagName="Radzen.Blazor.TagName.H4" class="mt-5" Style="text-align: center"></RadzenText>
-        <RadzenText Text="This is an example application for displaying data in real time using Blazor and SignalR." TextStyle="Radzen.Blazor.TextStyle.Body1" TagName="Radzen.Blazor.TagName.Auto" Style="line-height: 16px; font-size: 16px; margin: 0, 220,0,0; margin-top: 50px"></RadzenText>
+        <RadzenText Text="This is an example application for displaying data in real time using Blazor and SignalR." TextStyle="Radzen.Blazor.TextStyle.Body1" TagName="Radzen.Blazor.TagName.Auto" Style="line-height: 16px; font-size: 16px; margin: 0, 220,0,0; margin-top: 50px; margin-bottom: 25px"></RadzenText>
     </RadzenColumn>
 </RadzenRow>
 <RadzenRow Gap="5" RowGap="5">
@@ -35,7 +35,7 @@
                                                     <RadzenText Text="Status" TextStyle="TextStyle.Body2"></RadzenText>
                                                 </RadzenColumn >
                                                 <RadzenColumn Size="4">
-                                                    <RadzenIcon Icon="fiber_manual_record" IconColor="" IconStyle="IconStyle.Primary" Style="float: none; height: 16px; width: 16px; display: grid" class="rz-color-success"></RadzenIcon>
+                                                        <RadzenIcon Icon="fiber_manual_record" IconColor="" IconStyle="IconStyle.Primary" Style="float: none; height: 16px; width: 16px; display: grid" class="@GetState(building)"></RadzenIcon>
                                                 </RadzenColumn>
                                             </RadzenRow>
                                             <RadzenRow>
@@ -43,7 +43,7 @@
                                                     <RadzenText Text="Operating Mode" TextStyle="TextStyle.Body2"></RadzenText>
                                                 </RadzenColumn>
                                                 <RadzenColumn Size="4">
-                                                    <RadzenText Text="Day" TextStyle="TextStyle.Body2"></RadzenText>
+                                                    <RadzenText Text="@building.OperatingMode" TextStyle="TextStyle.Body2"></RadzenText>
                                                 </RadzenColumn>
                                             </RadzenRow>
                                             <RadzenRow>
@@ -51,7 +51,7 @@
                                                     <RadzenText Text="Active Devices" TextStyle="TextStyle.Body2"></RadzenText>
                                                 </RadzenColumn>
                                                 <RadzenColumn Size="4">
-                                                    <RadzenText Text="17" TextStyle="TextStyle.Body2"></RadzenText>
+                                                    <RadzenText Text="@building.ActiveDevices.ToString()" TextStyle="TextStyle.Body2"></RadzenText>
                                                 </RadzenColumn>
                                             </RadzenRow>
                                             <RadzenRow>
@@ -59,7 +59,7 @@
                                                     <RadzenText Text="Inactive Devices" TextStyle="TextStyle.Body2"></RadzenText>
                                                 </RadzenColumn>
                                                 <RadzenColumn Size="4">
-                                                    <RadzenText Text="6" TextStyle="TextStyle.Body2"></RadzenText>
+                                                    <RadzenText Text="@building.InactiveDevices.ToString()" TextStyle="TextStyle.Body2"></RadzenText>
                                                 </RadzenColumn>
                                             </RadzenRow>
                                         </RadzenColumn>
@@ -72,6 +72,9 @@
                     }
                 </RadzenRow>
             </RadzenPanel>
+        </RadzenRow>
+        <RadzenRow>
+        <RadzenText Text="Please click on a building to access the room overview." Style="line-height: 16px; font-size: 16px; margin: 0, 220,0,0; margin-top: 50px; margin-bottom: 25px"></RadzenText>
         </RadzenRow>
     </RadzenColumn>
 </RadzenRow>

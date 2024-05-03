@@ -30,35 +30,35 @@
                                         <RadzenColumn SizeLG="9">
                                             <RadzenRow RowGap="5" >
                                                 <RadzenColumn Size="1">
-                                                    <RadzenIcon Icon="fiber_manual_record" IconStyle="IconStyle.Primary" Style="float: none; height: 16px; width: 16px; display: grid" class="rz-color-warning"></RadzenIcon>
+                                                    <RadzenIcon Icon="fiber_manual_record" IconStyle="IconStyle.Primary" Style="float: none; height: 16px; width: 16px; display: grid" class="@GetState(GetDevice(room, "T"))"></RadzenIcon>
                                                 </RadzenColumn>
                                                 <RadzenColumn Size="7">
                                                     <RadzenText Text="Temperature" TextStyle="TextStyle.Body2"></RadzenText>
                                                 </RadzenColumn >
                                                 <RadzenColumn Size="4">
-                                                    <RadzenText Text="20.3 °C" TextStyle="TextStyle.Body2"></RadzenText>
+                                                    <RadzenText Text="@GetDevice(room, "T").Value" TextStyle="TextStyle.Body2"></RadzenText>
                                                 </RadzenColumn>
                                             </RadzenRow>
                                             <RadzenRow>
                                                 <RadzenColumn Size="1">
-                                                    <RadzenIcon Icon="fiber_manual_record" IconStyle="IconStyle.Primary" Style="display: grid; float: none; height: 16px; width: 16px" class="rz-color-danger"></RadzenIcon>
+                                                    <RadzenIcon Icon="fiber_manual_record" IconStyle="IconStyle.Primary" Style="display: grid; float: none; height: 16px; width: 16px" class="@GetState(GetDevice(room, "H"))"></RadzenIcon>
                                                 </RadzenColumn>
                                                 <RadzenColumn Size="7">
                                                     <RadzenText Text="Humidity" TextStyle="TextStyle.Body2"></RadzenText>
                                                 </RadzenColumn>
                                                 <RadzenColumn Size="4">
-                                                    <RadzenText Text="42,7%" TextStyle="TextStyle.Body2"></RadzenText>
+                                                    <RadzenText Text="@GetDevice(room, "H").Value" TextStyle="TextStyle.Body2"></RadzenText>
                                                 </RadzenColumn>
                                             </RadzenRow>
                                             <RadzenRow>
                                                 <RadzenColumn Size="1">
-                                                    <RadzenIcon Icon="fiber_manual_record" IconStyle="IconStyle.Primary" Style="display: grid; float: none; height: 16px; width: 16px" class="rz-color-success"></RadzenIcon>
+                                                    <RadzenIcon Icon="fiber_manual_record" IconStyle="IconStyle.Primary" Style="display: grid; float: none; height: 16px; width: 16px" class="@GetState(GetDevice(room, "P"))"></RadzenIcon>
                                                 </RadzenColumn>
                                                 <RadzenColumn Size="7">
                                                     <RadzenText Text="Differential pressure" TextStyle="TextStyle.Body2"></RadzenText>
                                                 </RadzenColumn>
                                                 <RadzenColumn Size="4">
-                                                    <RadzenText Text="45 Pa" TextStyle="TextStyle.Body2"></RadzenText>
+                                                    <RadzenText Text="@GetDevice(room, "P").Value" TextStyle="TextStyle.Body2"></RadzenText>
                                                 </RadzenColumn>
                                             </RadzenRow>
                                         </RadzenColumn>

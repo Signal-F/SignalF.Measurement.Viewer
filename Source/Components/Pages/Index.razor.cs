@@ -33,4 +33,11 @@ public partial class Index
     {
         Buildings = await DbContext.Buildings.ToListAsync();
     }
+
+    string GetState(Building building)
+    {
+        if (building != null && building.Name == "Building 001")
+            return "rz-color-danger";
+        return "rz-color-success";
+    }
 }

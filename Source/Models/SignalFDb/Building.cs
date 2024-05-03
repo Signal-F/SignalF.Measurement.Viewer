@@ -15,6 +15,12 @@ namespace SignalF.Measurement.Viewer.Models.SignalFDb
         [Required]
         public string Name { get; set; }
 
+        public string OperatingMode { get; set; }
+
+        public int? ActiveDevices { get; set; }
+
+        public int? InactiveDevices { get; set; }
+
         public ICollection<Room> Rooms { get; set; }
 
     }
